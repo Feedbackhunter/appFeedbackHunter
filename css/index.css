@@ -115,14 +115,11 @@ body {
    
     padding: 11px 0 11px 0;
 }
-.botao:active{
+.botao:active, .botao:after, .botao:hover{
     background-color: #2BAB92;
     border-color: #2BAB92;
 }
-.botao:after{
-    background-color: #2BAB92;
-    border-color: #2BAB92;
-}
+
 .texto{
     width: 97%;
     min-width: 97%;
