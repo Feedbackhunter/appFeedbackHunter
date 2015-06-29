@@ -95,11 +95,12 @@ body {
     padding: 19px 0 0 0;
     margin: 0px 19px 4px 19px;
     display: block;
+
 }
 .botao{
-    height: 40px;
-    max-height:40px;
-    min-height: 40px ;
+    height: 22px;
+    max-height:22px;
+    min-height: 22px ;
     width: 97%;
     min-width: 97%;
     max-width: 97%;
@@ -111,7 +112,16 @@ body {
     color: #fff;
     font-size: 18px;
     font-weight: 600;
-    box-shadow: none;
+   
+    padding: 11px 0 11px 0;
+}
+.botao:active{
+    background-color: #2BAB92;
+    border-color: #2BAB92;
+}
+.botao:after{
+    background-color: #2BAB92;
+    border-color: #2BAB92;
 }
 .texto{
     width: 97%;
