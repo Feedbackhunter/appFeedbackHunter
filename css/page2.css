@@ -120,13 +120,13 @@ body {
     border-color: #2BAB92;
 }
 .botao img{
-    height: 20px;
-    max-height:20px;
-    min-height: 20px ;
-    width: 20px;
-    min-width: 20px;
+    height: 12px;
+    max-height:12px;
+    min-height: 12px ;
+    width: 12px;
+    min-width: 12px;
     max-width: 12px;
-    margin: 1px 0 0 15px;
+    margin: 4.5px 0 0 15px;
 }
 .texto{
     width: 97%;
