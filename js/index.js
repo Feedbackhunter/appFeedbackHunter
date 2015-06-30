@@ -35,12 +35,6 @@ var app = {
                     localStorage.setItem("resultado", result.text);
                     $url = 'http://feedbackhunter.esy.es/formulario/?f=' + result.text + '&uuid=' + device.uuid;
                     var ref = cordova.InAppBrowser.open($url, '_blank', "location=yes,closebuttoncaption=Fechar, width='400', height='800'");
-                    ref.addEventListener('loadstart', function(event) {
-                        if (event.url.match("mobile/close")) {
-                            ref.close();
-                        }
-                    });
-                    window.location.replace("page2.html");
                 }
             );});
         }
