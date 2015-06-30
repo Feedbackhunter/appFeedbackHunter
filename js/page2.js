@@ -30,13 +30,16 @@ var app = {
         var nossoApp = document.getElementById("novamente");
         var nossoApp = document.getElementById("nossoApp");
         var home = document.getElementById("home");
-        
+        if (novamente){
+            novamente.addEventListener("click", function(){
+                var ref = cordova.InAppBrowser.open('http://feedbackhunter.com.br/', '_blank', 'location=yes');
+            });
+        }
         if (home){
             home.addEventListener("click", function(){
                 var ref = cordova.InAppBrowser.open('http://feedbackhunter.com.br/', '_blank', 'location=yes');
             });
         }
-        
         if (nossoApp){
             nossoApp.addEventListener("click", function(){
                 window.location.replace("index.html");

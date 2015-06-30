@@ -29,18 +29,15 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         var escanear = document.getElementById("escanear");
         if (escanear){
-            escanear.addEventListener("click",cordova.plugins.barcodeScanner.scan(
+            escanear.addEventListener("click",function () {cordova.plugins.barcodeScanner.scan(
                 function (result) {
                   alert("We got a barcode\n" +
                         "Result: " + result.text + "\n" +
                         "Format: " + result.format + "\n" +
                         "Cancelled: " + result.cancelled);
                   localStorage.setItem("resultado", result.text);
-                }, 
-                function (error) {
-                    alert("Scanning failed: " + error);
                 }
-            ););
+            );});
         }
    },
     // deviceready Event Handler
