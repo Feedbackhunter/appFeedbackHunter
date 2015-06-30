@@ -27,9 +27,23 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.getElementById("home").addEventListener("click", function(){
-            var ref = cordova.InAppBrowser.open('http://feedbackhunter.com.br/', '_blank', 'location=yes');
-        });
+        var nossoApp = document.getElementById("novamente");
+        var nossoApp = document.getElementById("nossoApp");
+        var home = document.getElementById("home");
+        
+        if (home){
+            home.addEventListener("click", function(){
+                var ref = cordova.InAppBrowser.open('http://feedbackhunter.com.br/', '_blank', 'location=yes');
+            });
+        }
+        
+        if (nossoApp){
+            nossoApp.addEventListener("click", function(){
+                window.location.replace("index.html");
+            });
+        }
+        
+
     },
     // deviceready Event Handler
     //
@@ -41,12 +55,15 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+        if (parentElement){
+            var listeningElement = parentElement.querySelector('.listening');
+            var receivedElement = parentElement.querySelector('.received');
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+            listeningElement.setAttribute('style', 'display:none;');
+            receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
+            console.log('Received Event: ' + id);
+        }
+        
     }
 };

@@ -29,9 +29,19 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         var escanear = document.getElementById("escanear");
         if (escanear){
-            escanear.addEventListener("click",function(){
-            window.location.replace("page2.html");
-        });}
+            escanear.addEventListener("click",cordova.plugins.barcodeScanner.scan(
+                function (result) {
+                  alert("We got a barcode\n" +
+                        "Result: " + result.text + "\n" +
+                        "Format: " + result.format + "\n" +
+                        "Cancelled: " + result.cancelled);
+                  localStorage.setItem("resultado", result.text);
+                }, 
+                function (error) {
+                    alert("Scanning failed: " + error);
+                }
+            ););
+        }
    },
     // deviceready Event Handler
     //
@@ -43,12 +53,15 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+        if (parentElement){
+            var listeningElement = parentElement.querySelector('.listening');
+            var receivedElement = parentElement.querySelector('.received');
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+            listeningElement.setAttribute('style', 'display:none;');
+            receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
+            console.log('Received Event: ' + id);
+        }
+        
     }
 };
