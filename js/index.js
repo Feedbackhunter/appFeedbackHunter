@@ -31,11 +31,15 @@ var app = {
         if (escanear){
             escanear.addEventListener("click",function () {cordova.plugins.barcodeScanner.scan(
                 function (result) {
-                  alert("We got a barcode\n" +
-                        "Result: " + result.text + "\n" +
-                        "Format: " + result.format + "\n" +
-                        "Cancelled: " + result.cancelled);
-                  localStorage.setItem("resultado", result.text);
+                    window.location.replace("page2.html");
+                    localStorage.setItem("resultado", result.text);
+                    $url = 'http://feedbackhunter.esy.es/formulario/?f=' + result.text + '&uuid=' + device.uuid;
+                    var ref = window.open($url, '_blank', "location=yes,closebuttoncaption=Fechar, width='400', height='800'");
+                    ref.addEventListener('loadstart', function(event) {
+                        if (event.url.match("mobile/close")) {
+                            ref.close();
+                        }
+                    });
                 }
             );});
         }
