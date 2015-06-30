@@ -28,12 +28,14 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         var escanear = document.getElementById("escanear");
+        localStorage.clear();
         if (escanear){
-            escanear.addEventListener("click",function () {cordova.plugins.barcodeScanner.scan(
-                function (result) {
+            escanear.addEventListener("click",function () {
+                cordova.plugins.barcodeScanner.scan(function (result) {
                     localStorage.setItem("resultado", result.text);
-                    var url = 'http://feedbackhunter.esy.es/formulario/?f=' + result.text;
-                    var ref = cordova.InAppBrowser.open(url, '_blank', "location=yes");
+                    var url = 'http://feedbackhunter.com.br/formulario/?f=' + result.text+'&uuid='+device.uuid;
+                    var ref = cordova.InAppBrowser.open(url, '_blank', "location=yes,closebuttoncaption=Fechar");
+                    ref.addEventListener('exit',function(){window.location ="page2.html";});
                 }
             );});
         }

@@ -32,7 +32,8 @@ var app = {
         var home = document.getElementById("home");
         if (novamente){
             novamente.addEventListener("click", function(){
-                var ref = cordova.InAppBrowser.open('http://feedbackhunter.com.br/', '_blank', 'location=yes');
+                var url = 'http://feedbackhunter.com.br/formulario/?f=' + localStorage.getItem('resultado')+'&uuid='+device.uuid;;
+                var ref = cordova.InAppBrowser.open(url, '_blank', "location=yes,closebuttoncaption=Fechar");
             });
         }
         if (home){
@@ -42,7 +43,7 @@ var app = {
         }
         if (nossoApp){
             nossoApp.addEventListener("click", function(){
-                window.location.replace("index.html");
+                var ref = cordova.InAppBrowser.open('http://feedbackhunter.com.br/formulario/?f=1', '_blank', "location=yes,closebuttoncaption=Fechar");
             });
         }
         
