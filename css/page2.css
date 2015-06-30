@@ -97,7 +97,7 @@ body {
     display: block;
 
 }
-.botao{
+.botao1{
     height: 22px;
     max-height:22px;
     min-height: 22px ;
@@ -106,8 +106,8 @@ body {
     max-width: 97%;
     margin: 0 1.5% 0 1.5%;
     background-color: #16a085;
-    border-radius: 7.5px;
-    border-color: #16a085;
+    border-radius: 7.5px 7.5px 0 0;
+    border-bottom: 1px solid #1C8174;
     text-align: center;
     color: #fff;
     font-size: 18px;
@@ -115,18 +115,51 @@ body {
    
     padding: 11px 0 11px 0;
 }
-.botao:active, .botao:after, .botao:hover{
+.botao2{
+    height: 22px;
+    max-height:22px;
+    min-height: 22px ;
+    width: 97%;
+    min-width: 97%;
+    max-width: 97%;
+    margin: 0 1.5% 0 1.5%;
+    background-color: #16a085;
+    border-radius: 0;
+    border-bottom: 1px solid #1C8174;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 11px 0 11px 0;
+}
+.botao3{
+    height: 22px;
+    max-height:22px;
+    min-height: 22px ;
+    width: 97%;
+    min-width: 97%;
+    max-width: 97%;
+    margin: 0 1.5% 0 1.5%;
+    background-color: #16a085;
+    border-radius: 0 0 7.5px 7.5px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600; 
+    padding: 11px 0 11px 0;
+}
+.botao1:active, .botao1:after, .botao1:hover,.botao2:active, .botao2:after, .botao2:hover,.botao3:active, .botao3:after, .botao3:hover{
     background-color: #2BAB92;
     border-color: #2BAB92;
 }
-.botao img{
-    height: 12px;
-    max-height:12px;
-    min-height: 12px ;
-    width: 12px;
-    min-width: 12px;
-    max-width: 12px;
-    margin: 4.5px 0 0 15px;
+.botao1 img,.botao2 img,.botao3 img{
+    height: 20px;
+    max-height:20px;
+    min-height: 20px ;
+    width: 20px;
+    min-width: 20px;
+    max-width: 20px;
+    margin: 1px 0 0 15px !important;
 }
 .texto{
     width: 97%;

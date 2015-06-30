@@ -27,6 +27,9 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.getElementById("home").addEventListener("click", function(){
+            var ref = cordova.InAppBrowser.open('http://feedbackhunter.com.br/', '_blank', 'location=yes');
+        });
     },
     // deviceready Event Handler
     //

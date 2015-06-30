@@ -27,7 +27,12 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
+        var escanear = document.getElementById("escanear");
+        if (escanear){
+            escanear.addEventListener("click",function(){
+            window.location.replace("page2.html");
+        });}
+   },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
