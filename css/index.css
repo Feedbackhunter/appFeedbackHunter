@@ -127,6 +127,7 @@ body {
     min-width: 20px;
     max-width: 20px;
     margin: 1px 0 0 15px;
+
 }
 .texto{
     width: 97%;
@@ -139,4 +140,18 @@ body {
     font-style: italic;
     text-align: center;
     color: #444;
+}
+@media(min-height: 800px){
+    .texto{
+    width: 97%;
+    min-width: 97%;
+    max-width: 97%;
+    margin: 0 1.5% 0 1.5%;
+    font-size: 24px;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    text-align: center;
+    color: #444;
+}
 }
